@@ -11,7 +11,7 @@ public class UserRepositoryBean implements UserRepository {
     }
 
     @Override
-    public User findById(int id) {
+    public User findById(Long id) {
         return findAll().stream().
                 filter(user -> (((Integer) user.getId()).equals(id))).
                 findFirst().get();
