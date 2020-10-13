@@ -1,6 +1,5 @@
 package com.isa.userengine.servlet;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,16 +10,18 @@ import java.io.PrintWriter;
 @WebServlet("/welcome-user")
 public class WelcomeUserServlet extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String name = request.getParameter("name");
-
         response.setContentType("text/html;charset=UTF-8");
 
-        if (name==null || name.isEmpty()) {
+        if (name == null || name.isEmpty()) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
         }
+
         PrintWriter writer = response.getWriter();
-        writer.println("<!DOCTYPE html><html><body><h2>Hello "+name+"!</h2></body></html>");
+        writer.println("<!DOCTYPE html><html><body><h2>Hello " + name + "!</h2></body></html>");
     }
 }
+
