@@ -1,7 +1,6 @@
 package com.isa.userengine.repository;
 
 import com.isa.userengine.domain.User;
-
 import java.util.List;
 
 public interface UserRepository {

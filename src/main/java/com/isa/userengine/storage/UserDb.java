@@ -1,7 +1,6 @@
 package com.isa.userengine.storage;
 
 import com.isa.userengine.domain.User;
-import com.isa.userengine.domain.User;
 import java.util.ArrayList;
 import java.util.List;
 
