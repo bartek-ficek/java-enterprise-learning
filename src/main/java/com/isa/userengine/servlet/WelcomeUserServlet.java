@@ -14,9 +14,13 @@ public class WelcomeUserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
 
-//        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
 
+        if (name==null || name.isEmpty()) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            return;
+        }
         PrintWriter writer = response.getWriter();
-        writer.println("<!DOCTYPE html><html><body><h2>Hello "+name+"</h2></body></html>");
+        writer.println("<!DOCTYPE html><html><body><h2>Hello "+name+"!</h2></body></html>");
     }
 }
