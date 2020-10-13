@@ -18,21 +18,21 @@ public class UserDb {
   private static void fillRepositoryWithDefaults() {
 
     User user1 = new User();
-    user1.setId(1);
+    user1.setId(1L);
     user1.setName("Jan");
     user1.setLogin("janko");
     user1.setAge(21);
     userRepository.add(user1);
 
     User user2 = new User();
-    user2.setId(2);
+    user2.setId(2L);
     user2.setName("Adam");
     user2.setLogin("ano");
     user2.setAge(20);
     userRepository.add(user2);
 
     User user3 = new User();
-    user3.setId(3);
+    user3.setId(3L);
     user3.setName("Anna");
     user3.setLogin("anmi");
     user3.setAge(20);

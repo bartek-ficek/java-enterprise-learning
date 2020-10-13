@@ -3,6 +3,7 @@ package com.isa.userengine.repository;
 import com.isa.userengine.domain.User;
 import com.isa.userengine.storage.UserDb;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class UserRepositoryBean implements UserRepository {
     @Override
@@ -13,8 +14,8 @@ public class UserRepositoryBean implements UserRepository {
     @Override
     public User findById(Long id) {
         return findAll().stream().
-                filter(user -> (((Integer) user.getId()).equals(id))).
-                findFirst().get();
+                filter(user -> (((Long) user.getId()).equals(id))).
+                findFirst().orElse(null);
     }
 
     @Override
