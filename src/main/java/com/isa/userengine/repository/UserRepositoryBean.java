@@ -3,7 +3,6 @@ package com.isa.userengine.repository;
 import com.isa.userengine.domain.User;
 import com.isa.userengine.storage.UserDb;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 public class UserRepositoryBean implements UserRepository {
     @Override

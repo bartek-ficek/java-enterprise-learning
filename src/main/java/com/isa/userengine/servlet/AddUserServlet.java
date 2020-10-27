@@ -16,7 +16,9 @@ import java.io.PrintWriter;
 public class AddUserServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("add-user.html");
+
+        request.setAttribute("name","Beniaminek");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("add-user.jsp");
         requestDispatcher.forward(request, response);
     }
 
@@ -28,10 +30,14 @@ public class AddUserServlet extends HttpServlet {
         user.setPassword(request.getParameter("password"));
         user.setAge(Integer.parseInt(request.getParameter("age")));
 
+        PrintWriter writer = response.getWriter();
+
         UserService userService = new UserService();
         userService.save(user);
+        if (user.getId()!=null) {
+            writer.println("<!DOCTYPE html><html><body><h2>User saved correctly in DB.</h2></body></html>");
+        }
 
-        PrintWriter writer = response.getWriter();
         writer.println("<!DOCTYPE html><html><body>" + user + "</body></html>");
 
     }
