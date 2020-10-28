@@ -27,6 +27,9 @@ public class LoginServlet extends HttpServlet {
 
         if (login.equals("isa@isa.pl") && password.equals("123456")) {
             printWriter.write("You're signed in!");
+
+            request.getSession().setAttribute("login",login);
+
         } else printWriter.write("Wrong signing data!");
 
         printWriter.write("</body></html>");
