@@ -2,8 +2,11 @@ package com.isa.userengine.repository;
 
 import com.isa.userengine.domain.User;
 import com.isa.userengine.storage.UserDb;
+
+import javax.ejb.Stateless;
 import java.util.List;
 
+@Stateless
 public class UserRepositoryBean implements UserRepository {
     @Override
     public void save(User user) {
