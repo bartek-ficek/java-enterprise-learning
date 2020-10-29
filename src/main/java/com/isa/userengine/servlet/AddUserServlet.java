@@ -15,6 +15,7 @@ import java.io.PrintWriter;
 @WebServlet("/user")
 public class AddUserServlet extends HttpServlet {
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         request.setAttribute("name","Beniaminek");
@@ -22,6 +23,7 @@ public class AddUserServlet extends HttpServlet {
         requestDispatcher.forward(request, response);
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = new User();
         user.setId(Long.parseLong(request.getParameter("id")));
