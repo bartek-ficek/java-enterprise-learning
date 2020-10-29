@@ -6,6 +6,15 @@ public class User {
     String login;
     String password;
     Integer age;
+    Gender gender;
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
 
     public Long getId() {
         return id;
