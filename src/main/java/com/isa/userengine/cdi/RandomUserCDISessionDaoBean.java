@@ -11,12 +11,14 @@ import java.util.Random;
 @SessionScoped
 public class RandomUserCDISessionDaoBean implements RandomUserCDISessionDao, java.io.Serializable {
 
+    private int index = new Random().nextInt(3);
+
     @EJB
     private UserRepository userRepositoryBean;
 
     @Override
     public User getRandomUser() {
-        return userRepositoryBean.findAll().get(new Random().nextInt(3));
+        return userRepositoryBean.findAll().get(index);
     }
 
 }

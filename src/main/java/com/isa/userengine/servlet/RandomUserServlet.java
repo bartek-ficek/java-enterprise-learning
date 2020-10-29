@@ -17,9 +17,9 @@ import java.io.PrintWriter;
 public class RandomUserServlet extends HttpServlet {
 
     @Inject
-    RandomUserCDIApplicationDaoBean applicationDaoBean;
-    @Inject
     RandomUserCDIRequestDaoBean requestDaoBean;
+    @Inject
+    RandomUserCDIApplicationDaoBean applicationDaoBean;
     @Inject
     RandomUserCDISessionDaoBean sessionDaoBean;
 

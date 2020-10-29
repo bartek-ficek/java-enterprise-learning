@@ -10,11 +10,13 @@ import java.util.Random;
 @ApplicationScoped
 public class RandomUserCDIApplicationDaoBean implements RandomUserCDIApplicationDao {
 
+    private int index = new Random().nextInt(3);
+
     @EJB
     private UserRepository userRepositoryBean;
 
     @Override
     public User getRandomUser() {
-        return userRepositoryBean.findAll().get(new Random().nextInt(3));
+        return userRepositoryBean.findAll().get(index);
     }
 }
